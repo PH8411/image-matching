@@ -20,7 +20,7 @@ Due to the author only open the test code and pretrained network,  you need to r
 This repo depends on a few standard pythonic modules, plus OpenCV and PyTorch.
 
 - Python3==3.7
-- Pytorch>=1.1
+- Pytorch>=1.2
 - opencv-python==4.5.1.48
 - opencv-contrib-python==4.5.1.48
 - cuda (tested in cuda10.1)
