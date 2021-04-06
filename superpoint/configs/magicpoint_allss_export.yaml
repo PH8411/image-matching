@@ -1,0 +1,46 @@
+data:
+    dataset: 'ALLSS'  # 'coco' 'hpatches'
+    export_folder: 'train' # train, val
+    preprocessing:
+        resize: [480, 640] #[240,320]
+    gaussian_label:
+        enable: false # false
+        sigma: 1.
+    augmentation:
+        photometric:
+            enable: false
+    homography_adaptation:
+        enable: true
+        num: 50 # 100
+        aggregation: 'sum'
+        filter_counts: 0
+        homographies:
+            params:
+                translation: true
+                rotation: true
+                scaling: true
+                perspective: true
+                scaling_amplitude: 0.2
+                perspective_amplitude_x: 0.2
+                perspective_amplitude_y: 0.2
+                allow_artifacts: true
+                patch_ratio: 0.85
+
+training:
+    workers_test: 0
+
+model:
+    name: 'superpoint_train' 
+    params: {
+    }    
+    batch_size: 1
+    eval_batch_size: 1
+    detection_threshold: 0.015
+    nms: 4
+    top_k: 1200
+    subpixel:
+        enable: true
+
+pretrained: 'superpoint/models/weights/magicpoint/superPointNet_100000_checkpoint.pth.tar'
+
+
